@@ -1,0 +1,8 @@
+.login .logo-container{
+    display: flex ;
+    justify-content: center ;
+}
+
+.amazon-login{
+    height: 50px ;
+}
