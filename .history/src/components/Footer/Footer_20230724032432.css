@@ -1,0 +1,88 @@
+.footer .footer-container{
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+}
+
+.footer .footer-container {
+    font-size: 13px ;
+    line-height: 19px ;
+    height: 40px;
+    background: #37475a ;
+    color : white;
+}
+
+.footer .footer-container link {
+    color: #fff ;
+    margin-top: 30px;
+
+}
+
+.footer-link{
+    display: flex ;
+    justify-content: center;
+    height: 50vh;
+   background: #232F3E;
+   line-height: 35px;
+   padding-top: 4px;
+}
+
+.footer-link div > h3 {
+  font-size: 16px ;
+  color : #ffffff;
+  margin-right: 100px;
+  margin-top: 30px;
+}
+
+
+.footer-link link p:hover{
+  background: red;
+}
+
+.footer-info{
+    display: flex ;
+    height: 100px ;
+    background: #232F3E;
+}
+
+.footer-info .amazon-logo{
+    width : 250px ;
+}
+
+.footer-info
+ .united-states-image
+ , .earth-icon
+ {
+    width : 20px;
+ }
+
+ .footer-info .earth-icon{
+    background: #fff ;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+
+.footer-info{
+
+}
+ .footer-info .info{
+   display: flex ;
+   justify-content: center;
+   margin-top: 30px ;
+   margin-left: 15px ;
+   border: 1px solid #fff ;
+   padding: 10px;
+   height: 45px;
+   border-radius: 3px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   -ms-border-radius: 3px;
+   -o-border-radius: 3px;
+}
+
+
+

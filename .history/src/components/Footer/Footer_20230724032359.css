@@ -1,0 +1,88 @@
+.footer .footer-container{
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+}
+
+.footer .footer-container {
+    font-size: 13px ;
+    line-height: 19px ;
+    height: 40px;
+    background: #37475a ;
+    color : white;
+}
+
+.footer .footer-container link {
+    color: #fff ;
+    margin-top: 30px;
+
+}
+
+.footer-link{
+    display: flex ;
+    justify-content: center;
+    height: 50vh;
+   background: #232F3E;
+   line-height: 35px;
+   padding-top: 4px;
+}
+
+.footer-link div > h3 {
+  font-size: 16px ;
+  color : #ffffff;
+  margin-right: 100px;
+  margin-top: 30px;
+}
+
+
+.footer-link link p:hover{
+  background: red;
+}
+
+/* Footer.css */
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #131921;
+    color: #cccccc;
+    padding: 20px;
+  }
+
+  .amazon-logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+  }
+
+  .info a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #cccccc;
+  }
+
+  .earth-icon,
+  .united-states-image {
+    width: 24px;
+    height: auto;
+    margin-right: 8px;
+  }
+
+  .selected-language,
+  .dollar-sign,
+  .currency,
+  .country-name {
+    font-size: 14px;
+  }
+
+  /* Add additional styling and adjust as needed */
+
+
+
+
