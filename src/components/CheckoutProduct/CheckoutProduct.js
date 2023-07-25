@@ -1,7 +1,16 @@
 import React from 'react'
 import './CheckoutProduct.css'
 import StarIcon from '../../images/icons/star.png'
+import { useAuth } from '../../context/GlobalContext'
+import * as actions from '../../context/Action'
 const CheckoutProduct = ({id , title , price , image , rating}) => {
+  const {card , dispatch} = useAuth() ;
+  const handleRemoveProduct = () =>{
+   dispatch({
+    type : actions.REMOVE_FROM_CARD ,
+    id ,
+   })
+  }
   return (
     <div className='checkout-product'>
       {image ? (
@@ -26,7 +35,7 @@ const CheckoutProduct = ({id , title , price , image , rating}) => {
      </p>
       ))}
        </div>
-     <button className='remove-btn'> Remove from Card </button>
+     <button className='remove-btn' onClick={handleRemoveProduct}> Remove from Card </button>
 
       </div>
     </div>

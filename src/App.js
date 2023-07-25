@@ -10,6 +10,8 @@ import Home from './components/Home/Home';
 import Checkout from './components/Checkout/Checkout';
 import CheckoutProduct from './components/CheckoutProduct/CheckoutProduct';
 import Footer from './components/Footer/Footer';
+import Payment from './components/Payment/Payment';
+import ProtectedRoutes from './components/ProtectedRoutes';
 
 function App() {
  const {dispatch} = useAuth();
@@ -35,14 +37,22 @@ function App() {
       <Routes>
         <Route path='/' element={
           <>
+         < ProtectedRoutes>
           <Header/>
           <Home/>
+         </ProtectedRoutes>
           </>
         }/>
        <Route path='/checkout' element={
         <>
         <Header/>
         <Checkout/>
+        </>
+       }/>
+       <Route path='/payment' element={
+        <>
+         <Header/>
+         <Payment/>
         </>
        }/>
         <Route path='/login' element={<Login/>}/>

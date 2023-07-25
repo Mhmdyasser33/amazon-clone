@@ -17,7 +17,6 @@ const Login = () => {
      .then((response) =>{
       // check if there is response navigate to homePage
         (response && navigate("/"));
-        console.log(user);
      }).catch((error) =>{
       alert(error.message) ;
      })
@@ -40,7 +39,7 @@ const Login = () => {
      </Link>
 
     <div className='login-container'>
-      <h1 className='signIn'> {user ? "Sign Out" : "Sign in"} </h1>
+      <h1 className='signIn'> Sign in </h1>
     <form>
      <h5 className='email'>E-mail </h5>
     <input

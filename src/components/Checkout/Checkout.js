@@ -3,6 +3,7 @@ import './Checkout.css'
 import checkoutAds from '../../images/checkoutAd.jpg'
 import { useAuth } from '../../context/GlobalContext'
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct'
+import SubTotal from '../SubTotal/SubTotal'
 const Checkout = ({id , title, price , rating, image}) => {
     const {user , card} = useAuth() ;
   return (
@@ -25,12 +26,18 @@ const Checkout = ({id , title, price , rating, image}) => {
                     ))
             ) :
             (
-                <h2 style={{textAlign : "center" , marginTop : "10px"}} className='no-content-card'> Your Card is Empty </h2>
+              <div className='no-product-container' style={{display :"flex" , justifyContent : "center" , margin : ".5rem 0 0 18rem"}}>
+               <h2 className='no-content-card'> Your Card is Empty </h2>
+              </div>
             )
             }
               </div>
 
         </div>
+        <div className='checkout-rightSide'>
+          <SubTotal/>
+        </div>
+
     </div>
   )
 }
