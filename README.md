@@ -18,6 +18,7 @@ To set up the Amazon Clone on your local machine, follow the steps below.
 Before you proceed, ensure you have the following installed:
 
 Node.js and npm: Download Node.js
+
 Firebase Account: Sign up for Firebase
 
 # Installation
