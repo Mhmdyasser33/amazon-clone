@@ -44,6 +44,11 @@ const MainReducer = (state = initialState , action) =>{
             ...state ,
             card : newCard
           }
+          case actions.EMPTY_CARD:
+            return{
+              ...state ,
+              card : [] ,
+            }
       default :
       return state
      }
