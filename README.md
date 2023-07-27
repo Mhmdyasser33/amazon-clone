@@ -4,11 +4,17 @@ The Amazon Clone is a web application that replicates the core functionalities o
 
 # Table of Contents
 Getting Started
+
 Prerequisites
+
 Installation
+
 Usage
+
 Features
+
 Contributing
+
 License
 
 # Getting Started
