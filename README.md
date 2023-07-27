@@ -1,4 +1,4 @@
-##Amazon Clone
+<h1>Amazon Clone</h1>
 
 The Amazon Clone is a web application that replicates the core functionalities of the popular e-commerce platform, Amazon. It allows users to browse through a catalog of products, add items to their shopping cart, proceed to checkout, and make payments using Stripe. The project is built using React for the frontend and utilizes Firebase for authentication, user management, and real-time database capabilities
 
