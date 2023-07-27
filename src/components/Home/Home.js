@@ -4,6 +4,7 @@ import Product from '../Product/Product'
 import shortid from 'shortid'
 import imageOne from '../../images/products/1.png'
 import './Home.css'
+import Footer from '../Footer/Footer'
 import imageTwo from '../../images/products/2.png'
 import imageThree from '../../images/products/3.png'
 import imageFour from '../../images/products/4.png'
@@ -14,7 +15,8 @@ import imageEight from '../../images/products/71wkMXIQ5HL._AC_UL400_.jpg'
 import imageNine  from '../../images/products/Fuji_Dash_SmartWatch_1X._SY304_CB639922137_.jpg'
 const Home = () => {
   return (
-    <div className='homr'>
+    <>
+    <div className='home'>
       <dvi className="home-container">
      <img src={HomeImg} alt='home-img' style={{width : "100%"}}/>
      <div className='home-row'>
@@ -72,8 +74,11 @@ const Home = () => {
      price={100}
      rating={5}/>
      </div>
+     <Footer/>
       </dvi>
     </div>
+
+    </>
   )
 }
 

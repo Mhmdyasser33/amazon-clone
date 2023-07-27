@@ -11,7 +11,6 @@ import Checkout from './components/Checkout/Checkout';
 import CheckoutProduct from './components/CheckoutProduct/CheckoutProduct';
 import Footer from './components/Footer/Footer';
 import Payment from './components/Payment/Payment';
-import ProtectedRoutes from './components/ProtectedRoutes';
 
 function App() {
  const {dispatch} = useAuth();
@@ -37,10 +36,8 @@ function App() {
       <Routes>
         <Route path='/' element={
           <>
-         < ProtectedRoutes>
           <Header/>
           <Home/>
-         </ProtectedRoutes>
           </>
         }/>
        <Route path='/checkout' element={
@@ -59,7 +56,6 @@ function App() {
         {/* this if there is anyComponent matched  */}
         <Route path='*' element={<h1>page not found </h1>}/>
       </Routes>
-      <Footer/>
      </Router>
     </div>
   );

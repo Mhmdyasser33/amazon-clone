@@ -39,7 +39,7 @@ const Login = () => {
      </Link>
 
     <div className='login-container'>
-      <h1 className='signIn'> Sign in </h1>
+      <h1 className='signIn'> {user ? "Sign out" : "Sign In"} </h1>
     <form>
      <h5 className='email'>E-mail </h5>
     <input
