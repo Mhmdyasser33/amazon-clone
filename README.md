@@ -65,4 +65,4 @@ This project is licensed under the MIT License.
 We extend our gratitude to the open-source community, Firebase, and Stripe for their invaluable contributions and tools that made this project possible.
 
 #Contact
-If you have any questions, feedback, or need support, feel free to reach out to our team at muhmmed.yasserxi@gmail.com
+If you have any questions, feedback, or need support, feel free to reach out to me at muhmmed.yasserxi@gmail.com
