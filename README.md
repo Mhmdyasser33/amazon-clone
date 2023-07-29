@@ -31,7 +31,7 @@ Node.js and npm: Download Node.js
 Firebase Account: Sign up for Firebase
 
 # Installation
-Clone the repository: git clone https://github.com/your-username/amazon-clone.git
+Clone the repository: git clone https://github.com/Mhmdyasser33/amazon-clone
 Change into the project directory: cd amazon-clone
 Install dependencies: npm install
 Set up Firebase:
