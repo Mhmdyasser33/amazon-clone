@@ -65,7 +65,7 @@ const Home = () => {
      image={imageThree}
      price={300.50}
      title="Fujitsu ScanSnap iX1600 Wireless or USB High-Speed Cloud Enabled Document, Photo & Receipt Scanner with Large Touchscreen and Auto Document Feeder for Mac or PC, White"
-    rating={5}/>cle
+    rating={5}/>
      </div>
      <div className='home-row'>
      <Product

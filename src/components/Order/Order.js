@@ -20,10 +20,15 @@ const Order = ({ order }) => {
           price={item.price}
           image={item.image}
           rating={item.rating}
+          hiddenBtn
         />
       ))}
       <CurrencyFormat
-        renderText={(value) => <h3>Order Total: {value}</h3>}
+        renderText={(value) =>
+          <>
+           <h3>Order Total: {value}</h3>
+          </>
+          }
         decimalScale={2}
         value={order.data.amount * 100}
         prefix={'$'}

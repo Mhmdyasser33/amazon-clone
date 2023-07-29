@@ -3,7 +3,7 @@ import './CheckoutProduct.css'
 import StarIcon from '../../images/icons/star.png'
 import { useAuth } from '../../context/GlobalContext'
 import * as actions from '../../context/Action'
-const CheckoutProduct = ({id , title , price , image , rating}) => {
+const CheckoutProduct = ({id , title , price , image , rating ,hiddenBtn}) => {
   const {basket , dispatch} = useAuth() ;
   const handleRemoveProduct = () =>{
    dispatch({
@@ -35,8 +35,9 @@ const CheckoutProduct = ({id , title , price , image , rating}) => {
      </p>
       ))}
        </div>
-     <button className='remove-btn' onClick={handleRemoveProduct}> Remove from Card </button>
-
+     {!hiddenBtn && (
+      <button className='remove-btn' onClick={handleRemoveProduct}> Remove from Basket </button>
+     )}
       </div>
     </div>
   )
