@@ -8,8 +8,8 @@ const ContextProvider = ({children}) => {
     const [state , dispatch] = useReducer(MainReducer , initialState)
   return (
     <GlobalState.Provider value={{
-       user :state.user ,
-       card : state.card    ,
+       user : state.user ,
+       basket : state.basket   ,
       dispatch : dispatch ,
     }}>
        {children}

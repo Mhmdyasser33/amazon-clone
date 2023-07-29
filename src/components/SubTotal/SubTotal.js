@@ -5,20 +5,20 @@ import {useAuth} from '../../context/GlobalContext'
 import { calcProductTotal } from '../../context/MainReducer'
 import { useNavigate } from 'react-router-dom'
 const TotalPrice = () => {
-const {card} = useAuth() ;
+const {basket} = useAuth() ;
 const navigate = useNavigate() ;
   return (
     <div className='subtotal'>
     <CurrencyFormat renderText={(value) =>
     <>
-     <p className='subtotal-container'>Subtotal ({card.length} items ) : <strong className='subTotal-value'>{value}</strong></p>
+     <p className='subtotal-container'>Subtotal ({basket.length} items ) : <strong className='subTotal-value'>{value}</strong></p>
      <small className='subtotal-gift'>
         <input type='checkbox'/>This order contains a gift
      </small>
     </>
     }
      decimalScale={2}
-     value={calcProductTotal(card)}
+     value={calcProductTotal(basket)}
       prefix={`$`}
       displayType='text'
       thousandSeparator= {true}

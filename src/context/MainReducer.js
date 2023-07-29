@@ -2,7 +2,7 @@ import * as actions from './Action'
 
 export const initialState = {
     user : null ,
-    card: [] ,
+    basket : [] ,
 }
 /* export const calcProductTotal = (card) =>{
   let totalPrice = 0 ;
@@ -26,15 +26,15 @@ const MainReducer = (state = initialState , action) =>{
         case actions.ADD_TO_CARD:
           return {
           ...state ,
-          card : [...state.card , action.item]
+          basket : [...state.basket , action.item]
           }
           case actions.REMOVE_FROM_CARD:
             // store the index of product...!
-            const productIndex =  state.card.findIndex((product) =>{
+            const productIndex =  state.basket.findIndex((product) =>{
               return product.id === action.id ;
             })
             // check if index greater or equal 0 start to remove index
-            let newCard = [...state.card] ;
+            let newCard = [...state.basket] ;
             if(productIndex >= 0 ){
                   newCard.splice(productIndex , 1) ;
             }else{
@@ -42,12 +42,12 @@ const MainReducer = (state = initialState , action) =>{
             }
           return{
             ...state ,
-            card : newCard
+            basket : newCard
           }
           case actions.EMPTY_CARD:
             return{
               ...state ,
-              card : [] ,
+              basket: [] ,
             }
       default :
       return state

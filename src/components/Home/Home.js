@@ -50,22 +50,22 @@ const Home = () => {
      rating={5}/>
      </div>
      <div className='home-row'>
-     <Product
-     image={imageNine}
-    title="Smart Watch Fitness Tracker with Heart Rate Blood Oxygen Blood Pressure Sleep Monitor 100 Sports Modes Step.."
-     price={140.02}
+
+    <Product
+     image={imageFive}
+     price={250.76}
+     title="MeLE PCG02 Fanless Mini PC Stick Windows 11 Pro J4125 8GB/128GB Portable Mini Desktop Computer Stick Business & Home Video Support HDMI 4K 60Hz, BT4.2, 2.4G/5.8G Dual Band Wi-Fi, USB, Ethernet..."
      rating={5}/>
      <Product
-     image={imageSeven}
-     title="Redragon S101 Gaming Keyboard, M601 Mouse, RGB Backlit Gaming Keyboard, Programmable Backlit Gaming Mouse.."
-     price={80.13}
-     rating={5}/>
-     <Product
-      image={imageEight}
-      title="Under Armour Boys' Elite Short Sleeve T-Shirt"
-      price={50}
-      rating={5}
-      />
+     image={imageFour}
+     price={200.32}
+     title="Meta Quest 2 — Advanced All-In-One Virtual Reality Headset — 128 GB"
+     rating={4}/>
+<Product
+     image={imageThree}
+     price={300.50}
+     title="Fujitsu ScanSnap iX1600 Wireless or USB High-Speed Cloud Enabled Document, Photo & Receipt Scanner with Large Touchscreen and Auto Document Feeder for Mac or PC, White"
+    rating={5}/>cle
      </div>
      <div className='home-row'>
      <Product

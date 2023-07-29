@@ -8,7 +8,7 @@ import { useAuth } from '../../context/GlobalContext'
 import {auth } from '../../firebase'
 const Header = () => {
 
-  const {card} = useAuth() ;
+  const {basket} = useAuth() ;
    // handle logOut method
   const handleLogOut = () =>{
    auth.signOut() ;
@@ -43,7 +43,7 @@ const Header = () => {
           <Link to="/checkout">
         <div className='header-optionCart'>
         <img className='shopping-cart-icon' src={shoppingCartIcon} alt='shoppingCart'/>
-        <strong><span className='numberOfProductInCart'> {card.length === 0 ? "0" : card.length}</span></strong>
+        <strong><span className='numberOfProductInCart'> {basket.length === 0 ? "0" : basket.length}</span></strong>
         </div>
         </Link>
     </div>

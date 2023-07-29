@@ -4,7 +4,7 @@ import StarIcon from '../../images/icons/star.png'
 import { useAuth } from '../../context/GlobalContext'
 import * as actions from '../../context/Action'
 const CheckoutProduct = ({id , title , price , image , rating}) => {
-  const {card , dispatch} = useAuth() ;
+  const {basket , dispatch} = useAuth() ;
   const handleRemoveProduct = () =>{
    dispatch({
     type : actions.REMOVE_FROM_CARD ,
