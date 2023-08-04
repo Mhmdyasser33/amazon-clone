@@ -8,10 +8,10 @@ import {doc , setDoc} from 'firebase/firestore'
 import {db}from '../../firebase'
 import './Payment.css';
 import { CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
+import * as actions from '../../context/Action'
 import axios from '../axios'
 const Payment = () => {
-  const {user,dispatch } = useAuth();
-  const {basket} = useAuth() ;
+  const {user,dispatch ,basket} = useAuth();
   const navigate = useNavigate();
   const [clientSecret, setClientSecret] = useState();
   const [error, setError] = useState(null);
@@ -32,7 +32,7 @@ const Payment = () => {
     getClientSecret();
   }, [basket]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     setProcessing(true);
     const payload = await stripe
@@ -44,7 +44,7 @@ const Payment = () => {
       .then(({ paymentIntent }) => {
         const ref = doc(db, "users", user?.uid, "orders", paymentIntent.id);
         setDoc(ref, {
-
+          basket : basket ,
           amount: paymentIntent.amount,
           created: paymentIntent.created,
         });
@@ -52,7 +52,7 @@ const Payment = () => {
         setError(null);
         setProcessing(false);
         dispatch({
-          type: "EMPTY_BASKET",
+          type: actions.EMPTY_CARD,
         });
         navigate("/orders", { replace: true });
       });
@@ -61,8 +61,6 @@ const Payment = () => {
     setDisabled(e.empty);
     setError(error ? error.message : "");
   };
-
-
   return (
     <div className='payment'>
       <div className='payment-container'>
@@ -76,7 +74,7 @@ const Payment = () => {
           </div>
           <div className='user-details'>
             <p className='user-email'>{user ? user.email : 'Guest'}</p>
-            <p className='payment-address'>Qena, Egypt</p>
+            <p className='payment-address'>Qena,Farshut, Egypt</p>
           </div>
         </div>
         {/* Review items and delivery code  */}
@@ -112,7 +110,7 @@ const Payment = () => {
                   thousandSeparator={true}
                 />
                 <button type='submit' disabled={processing || disabled || succeeded}>
-                  <span>{processing ? <p>Processing </p> : "Buy Now"}</span>
+                  <span>{processing ? <p>Processing... </p> : "Buy Now"}</span>
                 </button>
               </div>
               {error && <p>{error}</p>}

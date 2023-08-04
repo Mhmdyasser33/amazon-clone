@@ -1,4 +1,4 @@
-// Order.js
+
 import React from 'react';
 import moment from 'moment';
 import './Order.css';
@@ -24,10 +24,7 @@ const Order = ({ order }) => {
         />
       ))}
       <CurrencyFormat
-        renderText={(value) =>
-          <>
-           <h3>Order Total: {value}</h3>
-          </>
+        renderText={(value) => <h3>Order Total: {value}</h3>
           }
         decimalScale={2}
         value={order.data.amount * 100}
