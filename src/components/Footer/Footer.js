@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 import earthIcon from '../../images/icons/globe.png'
@@ -7,11 +7,29 @@ import trueAndFalseIcon from '../../images/icons/Screenshot (131).png'
 
 const Footer = () => {
 
+  const [scroll , setScroll] = useState(false) ;
+   useEffect(() =>{
+    const handleScroll = () =>{
+        if(window.scrollY > 500){
+          setScroll(true);
+        }else{
+          setScroll(false)
+        }
+    }
+
+    window.addEventListener("scroll" , handleScroll) ;
+    return () =>{
+    window.removeEventListener("scroll" , handleScroll);
+    }
+   } , [])
+   const handleScrollTop = () =>{
+    window.scrollTo({top : 0 ,behavior : "smooth"})
+   }
   return (
     <>
     <div className='footer'>
         <div className='footer-container'>
-      <Link to="/">
+      <Link onClick={handleScrollTop}>
         <p className='scroll-top' style={{color: "#ffffff",background :"#37475a"}}>Back to top</p>
       </Link>
          </div>

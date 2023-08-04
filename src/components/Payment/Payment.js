@@ -4,32 +4,35 @@ import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 import { Link, useNavigate } from 'react-router-dom';
 import { calcProductTotal } from '../../context/MainReducer';
 import CurrencyFormat from 'react-currency-format';
+
 import './Payment.css';
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import * as actions from '../../context/Action';
-import axios from '../axios';
+import { CardElement, useElements, useStripe} from '@stripe/react-stripe-js';
+import * as actions from '../../context/Action'
+import axios from '../axios'
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 
 const Payment = () => {
-  const { user, dispatch, basket } = useAuth();
+  const { user, dispatch , basket } = useAuth();
   const navigate = useNavigate();
   const [clientSecret, setClientSecret] = useState();
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [succeeded, setSucceeded] = useState(false);
-  const [processing, setProcessing] = useState(false);
+  const [processing, setProcessing] = useState("");
   const stripe = useStripe();
   const elements = useElements();
+  console.log(basket);
 
   useEffect(() => {
     // Fetch client secret from the server to handle payment
     const getClientSecret = async () => {
       const response = await axios({
-        method: 'post',
+        method: "post",
         url: `/payments/create?total=${calcProductTotal(basket) * 100}`,
       });
       setClientSecret(response.data.clientSecret);
+      return response;
     };
     getClientSecret();
   }, [basket]);
@@ -47,12 +50,13 @@ const Payment = () => {
 
     if (payload.paymentIntent) {
       // If payment is successful, update user's order history
-      const ref = doc(db, 'users', user?.uid, 'orders', payload.paymentIntent.id);
-      await setDoc(ref, {
+      const ref = doc(db, "users", user?.uid, "orders", payload.paymentIntent.id);
+      setDoc(ref, {
         basket: basket,
         amount: payload.paymentIntent.amount,
         created: payload.paymentIntent.created,
       });
+      console.log(payload);
 
       setSucceeded(true);
       setError(null);
@@ -60,21 +64,21 @@ const Payment = () => {
       dispatch({
         type: actions.EMPTY_CARD,
       });
-      navigate('/orders', { replace: true });
+      navigate("/orders", { replace: true });
     }
   };
 
   const handleChange = (e) => {
     // Update UI based on CardElement input changes
     setDisabled(e.empty);
-    setError(e.error ? e.error.message : null);
+    setError(error ? error.message : "");
   };
 
   return (
     <div className='payment'>
       <div className='payment-container'>
         <h1>
-          Checkout (<Link to='/checkout'>{basket.length} items</Link>)
+          Checkout (<Link to="/checkout">{basket.length} items</Link>)
         </h1>
 
         {/* Section for delivery address */}
@@ -104,11 +108,11 @@ const Payment = () => {
               basket.map((item) => (
                 <CheckoutProduct
                   key={item.id}
-                  id={item.id}
-                  title={item.title}
-                  image={item.image}
-                  price={item.price}
-                  rating={item.rating}
+                  id= {item.id}
+               title= {item.title}
+               image= {item.image}
+               price= {item.price}
+              rating={item.rating}
                 />
               ))
             )}
@@ -135,7 +139,7 @@ const Payment = () => {
                 </button>
               </div>
               {error && <p>{error}</p>}
-           </form>
+            </form>
           </div>
         </div>
       </div>
