@@ -1,21 +1,14 @@
 import * as actions from './Action'
 
-export const initialState = {
-    user : null ,
-    basket : [] ,
-}
-/* export const calcProductTotal = (card) =>{
-  let totalPrice = 0 ;
-  for(let i = 0 ; i < card.length; i++){
-    totalPrice  += card[i] ;
-  }
-  return totalPrice ;
-} */
 export const calcProductTotal = (productValue) =>{
      return productValue.reduce((prevValue , nextValue) =>{
          return prevValue + nextValue.price
      } , 0)
    }
+export const initialState = {
+    user : null ,
+    basket : [] ,
+}
 const MainReducer = (state = initialState , action) =>{
      switch(action.type){
      case actions.ADD_USER:

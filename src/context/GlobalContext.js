@@ -1,26 +1,29 @@
 import { createContext, useContext, useReducer } from "react";
 import MainReducer, { initialState } from "./MainReducer";
 
-const GlobalState = createContext() ;
+// Create a context for the global state
+const GlobalState = createContext();
 
+// ContextProvider component to wrap the application and provide the global state
+const ContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(MainReducer, initialState);
 
-const ContextProvider = ({children}) => {
-    const [state , dispatch] = useReducer(MainReducer , initialState)
   return (
-    <GlobalState.Provider value={{
-       user : state.user ,
-       basket : state.basket   ,
-      dispatch : dispatch ,
-    }}>
-       {children}
+    <GlobalState.Provider
+      value={{
+        user: state.user,
+        basket: state.basket,
+        dispatch: dispatch,
+      }}
+    >
+      {children}
     </GlobalState.Provider>
-  )
-}
+  );
+};
 
-export default ContextProvider
+export default ContextProvider;
 
-//create custom hook that used for sharing values to other component
- export const useAuth = () =>{
-    return useContext(GlobalState) ;
-}
-
+// Custom hook to access the global state values
+export const useAuth = () => {
+  return useContext(GlobalState);
+};
