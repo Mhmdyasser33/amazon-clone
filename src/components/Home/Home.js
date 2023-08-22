@@ -4,12 +4,12 @@ import Product from '../Product/Product'
 import shortid from 'shortid'
 import imageOne from '../../images/products/1.png'
 import './Home.css'
-import Footer from '../Footer/Footer'
 import imageTwo from '../../images/products/2.png'
 import imageThree from '../../images/products/3.png'
 import imageFour from '../../images/products/4.png'
 import imageFive from '../../images/products/5.png'
 import imageSix from '../../images/products/6.png'
+const LazyLoading = React.lazy(() => import ("../Footer/Footer.js")) ;
 
 const Home = () => {
   return (
@@ -97,7 +97,9 @@ const Home = () => {
             rating={5}
           />
         </div>
-        <Footer/>
+        <React.Suspense>
+        <LazyLoading/>
+        </React.Suspense>
       </dvi>
     </div>
     </>

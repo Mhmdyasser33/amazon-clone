@@ -1,4 +1,4 @@
-import React , {useEffect, useState} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 import earthIcon from '../../images/icons/globe.png'
@@ -7,21 +7,6 @@ import trueAndFalseIcon from '../../images/icons/Screenshot (131).png'
 
 const Footer = () => {
 
-  const [scroll , setScroll] = useState(false) ;
-   useEffect(() =>{
-    const handleScroll = () =>{
-        if(window.scrollY > 500){
-          setScroll(true);
-        }else{
-          setScroll(false)
-        }
-    }
-
-    window.addEventListener("scroll" , handleScroll) ;
-    return () =>{
-    window.removeEventListener("scroll" , handleScroll);
-    }
-   } , [])
    const handleScrollTop = () =>{
     window.scrollTo({top : 0 ,behavior : "smooth"})
    }
